@@ -1,0 +1,65 @@
+<ion-view view-title="User profile">
+  <ion-content>
+    <ion-list>
+      <ion-item >
+	    <form name="resetUserPassword" ng-submit="UpdatePassword();" novalidate>
+			<div class="list"  ng-show="update_type==''">
+				<label class="item item-input item-floating-label">
+					<img ng-src="{{user_image}}">
+				</label>
+				<div class="list">
+					 <p style="color:red;margin-bottom:10px">{{error_message}}</p>
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">First name</span>
+						<input type="text" placeholder="First name" ng-model="user.firstName">
+					</label>
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">Last name</span>
+						<input type="text" placeholder="Last name"  ng-model="user.lastName">
+					</label>
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">Email</span>
+						<input type="text" placeholder="Enter email" ng-model="user.email" disabled>
+					</label>
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">Phone Number</span>
+						<input type="number" placeholder="Enter Phone Number" ng-model="user.phoneNumber">
+					</label>
+				</div>
+				<button type="submit" class="button button-block button button-balanced " ng-click="updateUserDetails();">
+		  			SAVE
+				</button>
+			</div>
+		</form>
+		 <form name="resetUserEmail"  ng-show="update_type=='email'">
+			<div class="list" >
+				<div class="list">
+					<p style="color:red;margin-bottom:10px">{{error_email}}</p>
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">Confirm email</span>
+						<input type="text" placeholder="Confirm email" ng-model="confirmEmail" id="confirmUserEmail">
+					</label>
+				</div>
+				<button type="submit" class="button button-block button button-balanced " ng-click="UpdateAccount();">
+		  			SAVE
+				</button>
+			</div>
+		</form>
+		 <form name="resetUserPassword" ng-show="update_type=='password'">
+			<div class="list">
+
+				<div class="list">
+					<p style="color:red;margin-bottom:10px">{{error_password}}</p>
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">Confirm phone no</span>
+						<input type="text" placeholder="Confirm phone no" ng-model="confirmUserPhoneNo" id="confirmUserPhoneNo">
+					</label>
+				</div>
+				<button type="submit" class="button button-block button button-balanced " ng-click="UpdateAccount();">
+		  			SAVE
+				</button>
+			</div>
+		</form>
+    </ion-list>
+  </ion-content>
+</ion-view>
